@@ -1,0 +1,55 @@
+// This fragment shader is run once for every pixel drawn on the scene
+// The already rendered screen is in the texUnit0 texture, and this shader
+// modifies it to give a basic Toon/Cel Shading effect.
+//
+// Suggestions for modifications:
+//   - Change the color of lines drawn to not be black
+//   - Make everything not a line be drawn in white, for pencil-style effect
+//   - Blur all non-edge pixels
+//   - Make everything grayscale
+
+
+varying vec2 vTcOut; // Texture coord, fragment shader output
+
+uniform sampler2D texUnit0;
+uniform int screenWidth;
+uniform int screenHeight;
+
+// Controls how many lines are drawn. Lower value means more edges drawn.
+const float EDGE_THRESHOLD = 0.3;
+// Makes everything a bit brighter
+const float COLOR_MULTIPLIER = 1.3;
+
+// Color weights for nicer grayscale
+const vec3 W = vec3(0.2125, 0.7154, 0.0721);
+
+// gl_FragColor is the output color of the pixel we're shading
+void main()
+{
+    // The texture/framebuffer to shade is in texUni0, get the
+    gl_FragColor = texture2D(texUnit0, vTcOut);
+
+    gl_FragColor.rgb *= vec3(COLOR_MULTIPLIER, COLOR_MULTIPLIER, COLOR_MULTIPLIER);
+
+    // Single pixel offsets in the (0.0, 1.0) address space
+    float dx = 1.0 / screenWidth;
+    float dy = 1.0 / screenHeight;
+
+    // Surrounding pixels as grayscale: {bottom,center,top}{left,center,right}
+    float bl = dot(texture2D(texUnit0, vTcOut - vec2(dx, dy)).rgb, W);
+    float tr = dot(texture2D(texUnit0, vTcOut + vec2(dx, dy)).rgb, W);
+    float br = dot(texture2D(texUnit0, vTcOut - vec2(dx,-dy)).rgb, W);
+    float tl = dot(texture2D(texUnit0, vTcOut + vec2(dx,-dy)).rgb, W);
+    float bc = dot(texture2D(texUnit0, vTcOut - vec2(dx, 0.)).rgb, W);
+    float tc = dot(texture2D(texUnit0, vTcOut + vec2(dx, 0.)).rgb, W);
+    float cl = dot(texture2D(texUnit0, vTcOut - vec2(0., dy)).rgb, W);
+    float cr = dot(texture2D(texUnit0, vTcOut + vec2(0., dy)).rgb, W);
+
+    // Weighted differences of the surrounding pixels
+    float h = -br - 2.0 * cr - tr + bl + 2.0 * cl + tl;
+    float v = -bl - 2.0 * bc - br + tl + 2.0 * tc + tr;
+
+    // All those above threshold are treated as edges and drawn black.
+    if (length(vec2(h, v)) > EDGE_THRESHOLD)
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+}
