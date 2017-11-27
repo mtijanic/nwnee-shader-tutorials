@@ -35,26 +35,26 @@ There are also corresponding `ivec2`/`ivec3`/`ivec4` where the element type is `
 
 There are a few weird quirks regarding vectors that can be very confusing
 
--# `x`,`y`,`z`,`w` are aliased to `r`,`g`,`b`,`a`. Typing `v.x` is _same_ as typing `v.r`. Changing one changes the other. This is just added to make things simpler when a vector represents a color as opposed to coordinates.
+- `x`,`y`,`z`,`w` are aliased to `r`,`g`,`b`,`a`. Typing `v.x` is _same_ as typing `v.r`. Changing one changes the other. This is just added to make things simpler when a vector represents a color as opposed to coordinates.
 
--# Multiple fields of a vector can be indexed at once: `v.xy` is of type `vec2`, `v.rgba` is of type `vec4` and so on.
+- Multiple fields of a vector can be indexed at once: `v.xy` is of type `vec2`, `v.rgba` is of type `vec4` and so on.
 
--# Fields can be "swizzled", so all of these are valid as well:
+- Fields can be "swizzled", so all of these are valid as well:
 -- `v.xxxx` - Shorthand for `vec4(v.x, v.x, v.x, v.x)`
 -- `v.xyz = v.zyx` - Swap values of `x` and `z` in `v`
 -- `v.xyz = v.rgb` - No effect.
 
--# Vector constructor functions can take vectors. The following are all valid ways to make a new `vec3`:
+- Vector constructor functions can take vectors. The following are all valid ways to make a new `vec3`:
 -- `vec3 v = vec3();` - Populate with zeros
 -- `vec3 v = vec3(1.0);` - Populate rest with zeros
 -- `vec3 v = vec3(v2.xy, 1.0);`
 -- `vec3 v = v2.rgb`
 
--# Arithmetic between a vector and a scalar is done for each vector field:
+- Arithmetic between a vector and a scalar is done for each vector field:
 -- `v += 0.5` is a shorthand for `v.x += 0.5; v.y += 0.5; v.z += 0.5;`
 -- `v.xy = v.xz * 3` - is shorthand for `v.x *= 3; v.y = v.z * 3;`
 
--# Arithmetic between two vectors is done on a per-field basis:
+- Arithmetic between two vectors is done on a per-field basis:
 -- `v1 += v2` is a shorthand for `v1.x += v2.x; v1.y += v2.y; v1.z += v2.z;`
 
 
