@@ -78,7 +78,13 @@ So, what happens is that the FS knows its position inside the triangle as well, 
 This might be best shown in this example:
 ![alt text](https://i.stack.imgur.com/VQLYb.jpg "GLSL Example Triangle")
 
-The VS specify a color as output: Blue for top, red for left, green for right. The FS just does:
+The VS specify a color as output: Blue for top, red for left, green for right:
+
+    // gl_VertexID is a predefined input into all VS programs
+    // GetVertexColor() is a function we defined somewhere, don't worry about it for now
+    vColorOut = GetVertexColor(gl_VertexID);
+
+The FS just does:
 
     gl_FragColor = vColorOut;
 
