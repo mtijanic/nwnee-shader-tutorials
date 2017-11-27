@@ -21,3 +21,12 @@ The tutorials will (try to) teach you to write shaders for NWN:EE. A lot of this
 - "Material" fragment shaders
 - "Material" vertex shaders
 - Dynamic lighting in NWN
+
+
+## Other resources
+
+If you are having trouble following, [this](https://simonschreibt.de/gat/renderhell/) is a great animated introduction about the rendering pipeline, made with non-technical people in mind.
+
+If this is too slow and basic for you, try the lighthouse3d](http://www.lighthouse3d.com/tutorials/) tutorials on GLSL. You can skip anything that mentions "Geometry Shaders" or "Tessellation", as NWN doesn't have those.
+
+If you've gone through everything and _really_ want to know more about GPUs, send me a PM or email.
