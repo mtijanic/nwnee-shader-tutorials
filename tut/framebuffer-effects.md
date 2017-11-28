@@ -96,6 +96,8 @@ Instead of outputting the unmodified texture, we can change it in some simple wa
         gl_FragColor.b = 1.0 - gl_FragColor.b;
     }
 ![](https://i.imgur.com/L2wQiez.png)
+
+
 Colors in GLSL range from 0.0 to 1.0, and will automatically be clamped to that range when displaying. Let's take a look at few other simple effects we can do.
 
 Make everything much darker:
@@ -105,6 +107,8 @@ Make everything much darker:
         gl_FragColor = texture2D(texUnit0, vTcOut) * 0.5;
     }
 ![](https://i.imgur.com/ZZlTltm.png)
+
+
 Grayscale:
 
     void main()
@@ -115,6 +119,7 @@ Grayscale:
     }
 
 ![](https://i.imgur.com/B7i11Jh.png)
+
 
 #### Pixel-dependent changes
 
@@ -157,6 +162,7 @@ armed with this, let's make it so that each pixel is an average of itself and al
 and now we have a subtle blur effect.
 ![](https://i.imgur.com/HjEFvQ6.png)
 
+
 How about simply showing a different pixel than the one we were told to? We need a way to consistently displace the current position. We can use `vTcOut.x + K*dx` to move the image `K` pixels to the side. While a fixed `K` does not make much sense, we can tie it to something that changes, like the world timer:
 
     // A monotonically ticking timer with millisecond resolution
@@ -181,7 +187,8 @@ And we have a simple screen-shake effect. Let's make the displacement along the 
 and we have wavy effect.
 ![](https://i.imgur.com/15BF5q3l.png)
 
- With some constant modifications this could be an underwater scene, or an acid trip.
+
+With some constant modifications this could be an underwater scene, or an acid trip.
 
 #### Ideas for experimenting
 
