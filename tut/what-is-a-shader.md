@@ -106,3 +106,6 @@ NWN:EE added "Advanced Framebuffer Effects", also known as "fullscreen shaders" 
 At a lower level, what happens is that rather than rendering onto the screen, the game renders onto a spare image (texture), and then draws one large rectangle across the screen and applies that texture to it. Drawing of that rectangle follows the same process as drawing everything else, so the shaders are applied as well. This includes the VS as well, but there is little reason to modify the VS.
 
 Since these are easiest to work with, we'll start with them.
+
+## Next chapter
+[Framebuffer effects](tut/framebuffer-effects.md)

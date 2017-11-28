@@ -17,7 +17,7 @@ The tutorials will (try to) teach you to write shaders for NWN:EE. A lot of this
 
 - [What is a shader?](tut/what-is-a-shader.md)
 - [GLSL (OpenGL Shading Language) basics](tut/glsl-basics.md)
-- Framebuffer effects
+- [Framebuffer effects](tut/framebuffer-effects.md)
 - "Material" fragment shaders
 - "Material" vertex shaders
 - Dynamic lighting in NWN

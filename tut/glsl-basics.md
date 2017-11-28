@@ -150,3 +150,7 @@ NWN has a feature called "material shaders", which is a bit of a misnomer. Techn
 Dynamic lighting will be covered in the last chapter of the tutorial, but a quick foreward will help you understand NWN VSs. In NWN, light is calculated per-vertex, and then interpolated for every pixel on that face as a `varying` variable. This is why 90% of VS code will deal with lighting.
 
 A more advanced technique, called per-pixel lighting, moves these calculations into the FS, where finer grain control is available. This, however, is much more expensive on the GPU (more pixels than vertices).
+
+
+## Next chapter
+[GLSL (OpenGL Shading Language) basics](tut/glsl-basics.md)
