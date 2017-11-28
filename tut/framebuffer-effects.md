@@ -194,6 +194,24 @@ and we have wavy effect.
 
 With some constant modifications this could be an underwater scene, or an acid trip.
 
+
+Another option would be to show the same pixel several times (while dropping some others):
+
+    void main()
+    {
+        dx *= 8; dy *= 8; // How big should the pixels be?
+
+        vec2 coord = vec2(dx*floor(vTcOut.x/dx), dy*floor(vTcOut.y/dy));
+        gl_FragColor = texture2D(texUnit0, coord);
+    }
+
+and we get a pixelated world:
+
+
+![](https://i.imgur.com/O7vZEjq.png)
+
+
+
 #### Ideas for experimenting
 
 The above should be enough to get you started on custom FB effects. Some ideas that you can take a shot at:

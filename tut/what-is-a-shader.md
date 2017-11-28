@@ -76,7 +76,10 @@ VS is run per-vertex, FS is run per-pixel. There are many more pixels than verti
 So, what happens is that the FS knows its position inside the triangle as well, and knows which vertices (and thus which VS outputs) it cares about. Then, the _actual_ value taken as input to FS is interpolated between the values outputted by the three VSs, weighted by the distance of the pixel from the edges.
 
 This might be best shown in this example:
+
+
 ![alt text](https://i.stack.imgur.com/VQLYb.jpg "GLSL Example Triangle")
+
 
 The VS specify a color as output: Blue for top, red for left, green for right:
 
