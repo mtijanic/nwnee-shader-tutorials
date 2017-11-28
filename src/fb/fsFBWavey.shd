@@ -1,0 +1,26 @@
+
+varying vec2 vTcOut; // Texture coord, fragment shader output
+
+uniform sampler2D texUnit0;
+uniform int screenWidth;
+uniform int screenHeight;
+
+float dx = 1.0 / screenWidth;
+float dy = 1.0 / screenHeight;
+
+// A monotonically ticking timer with millisecond resolution
+uniform int worldtimerTimeOfDay;
+
+void main()
+{
+    const float SPEED = 1.0;      // Adjust for slower/faster transitions
+    const float AMPLITUDE = 20.0; // Adjust for smaller/larger distortions
+
+    // Need a new variable since 'varying' variables cannot be modified
+    vec2 newTc = vTcOut;
+    // Useful: sin(x) always returns in range (-1.0, 1.0).
+    newTc.x += AMPLITUDE * sin(newTc.y * SPEED * worldtimerTimeOfDay) * dx;
+    gl_FragColor = texture2D(texUnit0, newTc);
+}
+
+

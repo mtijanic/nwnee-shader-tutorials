@@ -1,0 +1,12 @@
+varying vec2 vTcOut; // Current pixel texture coordinate, set in VS (interpolated)
+uniform sampler2D texUnit0; // Already rendered scene as a texture
+
+void main()
+{
+    gl_FragColor = texture2D(texUnit0, vTcOut);
+
+    // Colors range from 0.0 to 1.0. Invert their values before displaying.
+    gl_FragColor.r = 1.0 - gl_FragColor.r;
+    gl_FragColor.g = 1.0 - gl_FragColor.g;
+    gl_FragColor.b = 1.0 - gl_FragColor.b;
+}

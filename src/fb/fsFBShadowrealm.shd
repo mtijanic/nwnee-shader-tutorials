@@ -1,0 +1,27 @@
+
+varying vec2 vTcOut; // Texture coord, fragment shader output
+uniform sampler2D texUnit0;
+
+void main()
+{
+    vec4 c = texture2D(texUnit0, vTcOut);
+
+    c += texture2D(texUnit0, vTcOut+0.001);
+    c += texture2D(texUnit0, vTcOut+0.003);
+    c += texture2D(texUnit0, vTcOut+0.005);
+    c += texture2D(texUnit0, vTcOut+0.007);
+    //c += texture2D(texUnit0, vTcOut+0.009);
+    //c += texture2D(texUnit0, vTcOut+0.011);
+
+    c += texture2D(texUnit0, vTcOut-0.001);
+    c += texture2D(texUnit0, vTcOut-0.003);
+    c += texture2D(texUnit0, vTcOut-0.005);
+    c += texture2D(texUnit0, vTcOut-0.007);
+    //c += texture2D(texUnit0, vTcOut-0.009);
+    //c += texture2D(texUnit0, vTcOut-0.011);
+
+    c.rgb = vec3((c.r+c.g+c.b)/3.0);
+    gl_FragColor = c / 7.5;
+}
+
+

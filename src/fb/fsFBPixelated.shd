@@ -1,0 +1,15 @@
+varying vec2 vTcOut; // Current pixel texture coordinate, set in VS (interpolated)
+uniform sampler2D texUnit0; // Already rendered scene as a texture
+
+uniform int screenWidth;
+uniform int screenHeight;
+
+const float PIXEL_SIZE = 8.0;
+void main()
+{
+    float dx = PIXEL_SIZE / screenWidth;
+    float dy = PIXEL_SIZE / screenHeight;
+
+    vec2 coord = vec2(dx*floor(vTcOut.x/dx), dy*floor(vTcOut.y/dy));
+    gl_FragColor = texture2D(texUnit0, coord);
+}

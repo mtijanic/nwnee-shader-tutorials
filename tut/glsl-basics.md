@@ -46,7 +46,7 @@ There are a few weird quirks regarding vectors that can be very confusing
 
 - Vector constructor functions can take vectors. The following are all valid ways to make a new `vec3`:
   - `vec3 v = vec3();` - Populate with zeros
-  - `vec3 v = vec3(1.0);` - Populate rest with zeros
+  - `vec3 v = vec3(1.0);` - Populate all with 1.0
   - `vec3 v = vec3(v2.xy, 1.0);`
   - `vec3 v = v2.rgb`
 
