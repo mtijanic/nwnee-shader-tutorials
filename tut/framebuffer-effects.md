@@ -192,3 +192,7 @@ The above should be enough to get you started on custom FB effects. Some ideas t
 #### Compiling shaders
 
 FB effect shaders are compiled when the game starts, and any compilation errors will show up on stderr. Make good use of these, as you won't get compilation error feedback when we move onto per .txi shaders.
+
+#### Other examples
+
+A collection of somewhat adequately documented FB effect shaders can be found in [src/fb](../src/fb).
