@@ -160,6 +160,8 @@ armed with this, let's make it so that each pixel is an average of itself and al
     }
 
 and now we have a subtle blur effect.
+
+
 ![](https://i.imgur.com/HjEFvQ6.png)
 
 
@@ -185,6 +187,8 @@ And we have a simple screen-shake effect. Let's make the displacement along the 
     newTc.x += AMPLITUDE * sin(newTc.y * SPEED * worldtimerTimeOfDay) * dx;
 
 and we have wavy effect.
+
+
 ![](https://i.imgur.com/15BF5q3l.png)
 
 
