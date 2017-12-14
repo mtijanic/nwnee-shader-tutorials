@@ -25,7 +25,7 @@ These shaders are compiled when the game starts, and as such can't be put in a p
 
 ### Ambient Occlusion
 
-A forth FB effect is present, called Ambient Occlusion, but disabled. You can enable it in the nwn.ini file by adding:
+A fourth FB effect is present, called Ambient Occlusion, but disabled. You can enable it in the nwn.ini file by adding:
 
     [Video Options]
     Enable FBEffect Ambient Occlusion=1
