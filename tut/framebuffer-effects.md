@@ -59,6 +59,7 @@ This is where the magic happens. This shader is executed for every pixel on the 
 
 - `vTcIn`    - The coordinates of the current pixel
 - `texUnit0` - The texture holding the previously rendered scene (including any transformations from previous FB effects)
+- `texUnit1` - The depth buffer of the scene, with the `.x` field representing the pixels depth in screen space.
 
 Additionally, we get access to a few uniforms (engine variables):
 
@@ -70,6 +71,13 @@ Additionally, we get access to a few uniforms (engine variables):
 - Mouse input
 
 For a complete list, see [uniforms.glsl](../src/uniforms.glsl).
+
+Additionally, framebuffer effects have a few variables exposed by the engine that have a specific use in that effect. Some examples:
+
+ - `dof_amount` - Depth of Field strength
+ - `blackPoint`, `whitePoint` - High Contrast limits
+
+These variables are useful as they can be queried and modified from the in-game console (just type e.g. `dof_amount 0.5`), and as such are a nice way to quickly tweak constants in your shaders.
 
 #### Passthrough FS
 
