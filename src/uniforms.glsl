@@ -143,3 +143,27 @@ uniform ivec2 userinputMousePosition;
 #define MOUSE_BUTTON_RIGHT  0x2
 #define MOUSE_BUTTON_MIDDLE 0x4
 uniform int userinputMouseButtons;
+
+
+
+//
+// FB effect variables
+//
+
+// Framebuffer containing already rendered scene
+uniform sampler2D texUnit0;
+// Framebuffer's depthbuffer. Only .x field is used.
+uniform sampler2D texUnit1;
+
+//
+// Variables exposed to the NWScript console.
+//   To query their value, just type the name in the console.
+//   To set their value, type new value after the name
+//
+                           // NWN console names:
+uniform float DOFAmount;   // dof_amount
+uniform float Vibrance;    // vibrance_vibrance
+uniform vec3 RGBBalance;   // vibrance_rgbbalance
+uniform float AORadius;    // ssao_radius
+uniform float AOIntensity; // ssao_intensity
+uniform float AOColor;     // ssao_color
