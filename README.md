@@ -13,6 +13,10 @@ These tutorials assume a basic level of understanding of:
 
 The tutorials will (try to) teach you to write shaders for NWN:EE. A lot of this knowledge is applicable to other games, but there are also significant gaps. NWN supports only a small subset of features present in a modern game; others (e.g. tessellation, geometry shaders, etc) are beyond the scope of these tutorials. You will find plenty of generic tutorials online, should you want to learn about those.
 
+## FAQ
+
+If you already have some knowledge how shaders work and are just looking for a specific answer, check the [FAQ](tut/faq.md).
+
 ## Chapters
 
 - [What is a shader?](tut/what-is-a-shader.md)
