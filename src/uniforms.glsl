@@ -167,3 +167,6 @@ uniform vec3 RGBBalance;   // vibrance_rgbbalance
 uniform float AORadius;    // ssao_radius
 uniform float AOIntensity; // ssao_intensity
 uniform float AOColor;     // ssao_color
+uniform float blackPoint;  // levels_blackPoint
+uniform float whitePoint;  // levels_whitePoint
+

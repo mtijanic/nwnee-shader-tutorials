@@ -74,6 +74,7 @@ See [uniforms.glsl](src/uniforms.glsl) for a full list.
 Some uniforms are exposed to read/write from the in-game console:
 
     TYPE  Shader Name     Console Name
+    ------------------------------------------
     float DOFAmount       dof_amount
     float Vibrance        vibrance_vibrance
     vec3  RGBBalance      vibrance_rgbbalance
@@ -85,6 +86,8 @@ Some uniforms are exposed to read/write from the in-game console:
     vec4  fogColor        mainscene.fogcolor
     int   fogMode         mainscene.fogmode
     int   fogEnabled      mainscene.fog
+    float blackPoint      levels_blackPoint
+    float whitePoint      levels_whitePoint
 
 <a name="q9"></a>
 ## I changed the value of a uniform in .shd, but it has no effect
