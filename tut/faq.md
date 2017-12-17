@@ -9,6 +9,7 @@
 8. [Can I modify the uniforms in game?](#q8)
 9. [I changed the value of a uniform in .shd, but it has no effect](#q9)
 10. [How do I measure the performance of my shader?](#q10)
+11. [What order are the FB effects run in?](#q11)
 
 
 
@@ -106,3 +107,7 @@ Make a save game in a scene where you want to measure. Type `trace fps` in the c
 
 `fps` command gives three numbers, for example: `100.0 (10.0) (0.01)` - The first is FPS, the second is minimal FPS in the last second and the third is `1/fps`.
 
+<a name="q11"></a>
+What order are the FB effects run in?
+
+The order in which they were enabled. The game keeps all FB effects in an array. When an effect is enabled, it gets added to the end. When it is disable, it is removed. You should not make any assumption that a particular order will be honored.
