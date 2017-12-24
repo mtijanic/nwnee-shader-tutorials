@@ -51,6 +51,7 @@ The game gives no indication that anything is wrong when a material shaders don'
     - FWIW, I use [apitrace](https://github.com/apitrace/apitrace/).
 - Try commenting out half of your code and see if it still compiles. You can do binary search this way.
 - Try compiling your shader as a FB shader instead. Those are compiled when the game starts, and errors are reported to `stderr`
+- Try showing the model that uses your shader in the toolset. The toolset reports shader compilation errors in a popup.
 
 <a name="q6"></a>
 ## How do I figure out which stock shaders render which object?
