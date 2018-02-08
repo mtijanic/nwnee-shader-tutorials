@@ -109,6 +109,6 @@ Make a save game in a scene where you want to measure. Type `trace fps` in the c
 `fps` command gives three numbers, for example: `100.0 (10.0) (0.01)` - The first is FPS, the second is minimal FPS in the last second and the third is `1/fps`.
 
 <a name="q11"></a>
-What order are the FB effects run in?
+## What order are the FB effects run in?
 
-The order in which they were enabled. The game keeps all FB effects in an array. When an effect is enabled, it gets added to the end. When it is disable, it is removed. You should not make any assumption that a particular order will be honored.
+The order in which they were enabled. The game keeps all FB effects in an array. When an effect is enabled, it gets added to the end. When it is disabled, it is removed. You should not make any assumption that a particular order will be honored.
