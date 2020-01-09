@@ -111,4 +111,4 @@ At a lower level, what happens is that rather than rendering onto the screen, th
 Since these are easiest to work with, we'll start with them.
 
 ## Next chapter
-[Framebuffer effects](tut/framebuffer-effects.md)
+[Framebuffer effects](framebuffer-effects.md)
