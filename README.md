@@ -1,3 +1,7 @@
+# WARNING: Outdated
+
+The tutorials posted here are outdated, and NWN:EE has progressed to the point where parts of it are no longer correct, or good advice. Use at your own risk.
+
 # Shader tutorials
 
 This repository holds various shader demos you can use as a primer to write your own superfancy effects. The shaders are well commented, so if you're feeling adventurous you can dive right in. Otherwise, read on.
